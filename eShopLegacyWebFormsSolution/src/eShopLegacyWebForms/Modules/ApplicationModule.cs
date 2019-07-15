@@ -36,6 +36,10 @@ namespace eShopLegacyWebForms.Modules
 
             builder.RegisterType<CatalogItemHiLoGenerator>()
                 .SingleInstance();
+
+            builder.RegisterType<ManagedIdentitySqlConnectionFactory>()
+                .As<ISqlConnectionFactory>()
+                .SingleInstance();
         }
     }
 }

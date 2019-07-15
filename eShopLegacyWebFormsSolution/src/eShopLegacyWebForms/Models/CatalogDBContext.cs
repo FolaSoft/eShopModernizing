@@ -7,7 +7,8 @@ namespace eShopLegacyWebForms.Models
 {
     public class CatalogDBContext : DbContext
     {
-        public CatalogDBContext() : base("name=CatalogDBContext")
+        public CatalogDBContext(ISqlConnectionFactory provider)
+            : base(provider.CreateConnection(), true)
         {
         }
 
